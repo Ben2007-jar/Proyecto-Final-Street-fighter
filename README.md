@@ -1,33 +1,16 @@
 # Proyecto-Final-K.O-Master
 
-A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
+## Integrantes:
+°Illa Cardozo Benjamin
+°Martinez Melanie
+°Romero Maitena
 
-This project was generated with a template including simple application launchers and an `ApplicationAdapter` extension that draws libGDX logo.
+## Descripcion del juego:
+K.O Master es un videojuego de pelea 2D que combina mecánicas clásicas de lucha con un enfoque en la acción rápida y dinámica.
+En este juego, dos jugadores se enfrentan en combates intensos, cada uno controlando un personaje con habilidades únicas.
+[Ver la propuesta detallada del proyecto](https://github.com/melanieaylen/Proyecto-Final-Street-fighter/wiki/Propuesta-del-Proyecto-%E2%80%90-K.O-Master)
 
-## Platforms
+## Tecnologias utilzidas:
+Se estara utilizando la version de eclipse 2025-03 utilizando la herramienta LibGDX v1.13.5.1.
+Este juego esta destinado para jugadores de PC.
 
-- `core`: Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
-
-## Gradle
-
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
-
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `idea`: generates IntelliJ project data.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
-
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
