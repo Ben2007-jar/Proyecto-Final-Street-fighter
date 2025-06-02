@@ -15,6 +15,7 @@ En este juego, **dos jugadores** se enfrentan en combates intensos, cada uno con
 
 ## 🛠️ Tecnologías utilizadas
 
+- **Java** versión `24` 
 - **Eclipse** versión `2025-03`  
 - **LibGDX** versión `1.13.5.1`  
 - Plataforma objetivo: **PC**
@@ -25,9 +26,28 @@ En este juego, **dos jugadores** se enfrentan en combates intensos, cada uno con
 
 ### 📥 Clonar el repositorio
 
-1. Ingresá a la URL de nuestro proyecto: [K.O Master](https://github.com/Ben2007-jar/Proyecto-Final-Street-fighter).
-2. Desde la interfaz de GitHub, hacé clic en el botón `< > Code` y seleccioná **Download ZIP**.
-3. Abrí el **Explorador de archivos**, dirigite a la carpeta **Descargas** y **extraé el archivo ZIP** descargado previamente.
+### Paso 1: Abrir Git Bash
+- Abre la terminal Git Bash en tu computadora.
+
+### Paso 2: Elegir la carpeta donde querés guardar el proyecto
+- Navegá con el comando `cd` a la carpeta donde quieras clonar el repositorio. Por ejemplo:
+  
+  cd /c/Users/TuUsuario/Documentos
+
+### Paso 3: Clonar el repositorio
+- Ejecutá este comando para clonar el proyecto desde Git Bash:
+  
+  git clone https://github.com/Ben2007-jar/Proyecto-Final-Street-fighter.git
+
+### Paso 4: Acceder a la carpeta del proyecto
+- Ingresá a la carpeta creada automáticamente:
+  
+  cd Proyecto-Final-Street-fighter
+
+### Paso 5: Verificar el estado del repositorio
+- Comprobá que todo esté en orden con:
+  
+  git status
 
 ### 🧰 Importar el proyecto en Eclipse
 
@@ -59,3 +79,11 @@ Hacé clic derecho y seleccioná **Run As** → **1 Java Application**.
 ---
 
 📌 *Asegurate de tener Java instalado y configurado correctamente en tu entorno para evitar errores durante la ejecución.*
+
+---
+
+### 📓 Estado actual del proyecto
+
+Para esta primera entrega, el proyecto se encuentra en la etapa de configuración inicial.  
+Se ha clonado y configurado correctamente la estructura básica del repositorio con Gradle y Eclipse, permitiendo importar y ejecutar la clase principal del juego sin errores.  
+Actualmente, el proyecto está listo para comenzar con el desarrollo de las mecánicas de juego y funcionalidades principales.
