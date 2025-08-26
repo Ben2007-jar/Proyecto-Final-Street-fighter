@@ -1,34 +1,32 @@
 package com.MBM.KOMaster;
 
-import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 
-/** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
-public class Principal extends ApplicationAdapter {
-    private SpriteBatch batch;
-    private Texture image;
+import pantallas.PantallaEscenario;
+import pantallas.PantallaMenu;
+import pantallas.PantallaPersonajes;
+import utiles.Render;
 
-    @Override
-    public void create() {
-        batch = new SpriteBatch();
-        image = new Texture("libgdx.png");
-    }
+public class Principal extends Game {
 
-    @Override
-    public void render() {
-        ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
-        batch.begin();
-        batch.draw(image, 140, 210);
-        batch.end();
-    }
+	@Override
+	public void create() {
+		Render.app = this;
+		Render.batch = new SpriteBatch();
+		this.setScreen(new PantallaMenu());
+	}
 
-    @Override
-    public void dispose() {
-        batch.dispose();
-        image.dispose();
-    }
+	@Override
+	public void render() {
+		ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
+		super.render();
+	}
+
+	@Override
+	public void dispose() {
+		Render.batch.dispose();
+	}
+
 }
