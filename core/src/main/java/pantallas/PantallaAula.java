@@ -9,7 +9,7 @@ import utiles.Render;
 public class PantallaAula implements Screen {
 
 	Imagen fondo;
-
+	
 	@Override
 	public void show() {
 		fondo = new Imagen(Recursos.AULA);
