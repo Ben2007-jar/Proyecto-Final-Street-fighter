@@ -23,21 +23,31 @@ public class PantallaMenu implements Screen {
 	float contTiempo = 0, tiempoEspera = 5;
 
 	BitmapFont fuente;
+	BitmapFont fuenteTitulo;
 	Entradas entrada = new Entradas();
-
+	
 	@Override
 	public void show() {
 		menu = new Imagen(Recursos.FONDO_MENU);
 		Gdx.input.setInputProcessor(entrada);
-		FreeTypeFontGenerator generador = new FreeTypeFontGenerator(Gdx.files.internal("pixel.ttf"));
+		FreeTypeFontGenerator generador = new FreeTypeFontGenerator(Gdx.files.internal("fuentes/pixel.ttf"));
+		FreeTypeFontGenerator generadorTitulo = new FreeTypeFontGenerator(Gdx.files.internal("fuentes/MK4.ttf"));
 		FreeTypeFontParameter parametros = new FreeTypeFontGenerator.FreeTypeFontParameter();
+		FreeTypeFontParameter parametrosTitulo = new FreeTypeFontGenerator.FreeTypeFontParameter();
 
-		parametros.size = 55;
-		parametros.color = Color.LIGHT_GRAY;
+		parametros.size = 50;
+		parametros.color = Color.WHITE;
 		parametros.shadowColor = Color.DARK_GRAY;
-		parametros.shadowOffsetX = -2;
+		parametros.shadowOffsetX = -3;
 		parametros.shadowOffsetY = 3;
-
+		
+		parametrosTitulo.size = 150;
+		parametrosTitulo.color = Color.WHITE;
+		parametrosTitulo.shadowColor = Color.RED;
+		parametrosTitulo.shadowOffsetX = -3;
+		parametrosTitulo.shadowOffsetY = 3;
+				
+		fuenteTitulo = generadorTitulo.generateFont(parametrosTitulo);
 		fuente = generador.generateFont(parametros);
 	}
 
@@ -47,11 +57,11 @@ public class PantallaMenu implements Screen {
 		procesarTransparencia();
 		Render.batch.begin();
 		menu.dibujar();
-//		fuente.draw(Render.batch, "> Juego en red", 450, 500);
-//		fuente.draw(Render.batch, "> Juego local", 460, 350);
-//		fuente.draw(Render.batch, "> Controles", 480, 200);
+		fuente.draw(Render.batch, "> Juego en red", 400, 370);
+		fuente.draw(Render.batch, "> Juego local", 410, 270);
+		fuente.draw(Render.batch, "> Controles", 420, 170);
+		fuenteTitulo.draw(Render.batch, "K.O Master", 200, 600);
 		if (entrada.isAbajo()) {
-
 		}
 		Render.batch.end();
 	}

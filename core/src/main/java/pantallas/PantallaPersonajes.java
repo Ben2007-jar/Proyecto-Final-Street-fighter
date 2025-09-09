@@ -40,11 +40,11 @@ public class PantallaPersonajes implements Screen {
 		salgado.setParametros(130, 240, 120, 170);
 		reyes.setParametros(960, 220, 160, 200);
 
-		FreeTypeFontGenerator generador = new FreeTypeFontGenerator(Gdx.files.internal("pixel.ttf"));
+		FreeTypeFontGenerator generador = new FreeTypeFontGenerator(Gdx.files.internal("fuentes/pixel.ttf"));
 		FreeTypeFontParameter parametros = new FreeTypeFontGenerator.FreeTypeFontParameter();
 
 		parametros.size = 45;
-		parametros.color = Color.LIGHT_GRAY;
+		parametros.color = Color.WHITE;
 		parametros.shadowColor = Color.DARK_GRAY;
 		parametros.shadowOffsetX = -2;
 		parametros.shadowOffsetY = 3;

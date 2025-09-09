@@ -2,6 +2,7 @@ package com.MBM.KOMaster.lwjgl3;
 
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
+import com.badlogic.gdx.graphics.Color;
 import com.MBM.KOMaster.Principal;
 
 /** Launches the desktop (LWJGL3) application. */
@@ -30,7 +31,7 @@ public class Lwjgl3Launcher {
         configuration.setWindowedMode(1224, 688);
         //// You can change these files; they are in lwjgl3/src/main/resources/ .
         //// They can also be loaded from the root of assets/ .
-        configuration.setWindowIcon("libgdx.png");
+        configuration.setWindowIcon("icono/jugador.png");
         return configuration;
     }
 }
