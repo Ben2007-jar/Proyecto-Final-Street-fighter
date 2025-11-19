@@ -1,34 +1,79 @@
 package com.MBM.KOMaster;
 
-import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
+import com.MBM.KOMaster.screens.MenuScreen;
+import com.MBM.KOMaster.audio.SoundManager;
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.ScreenUtils;
 
-/** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
-public class Principal extends ApplicationAdapter {
-    private SpriteBatch batch;
-    private Texture image;
+// IMPORTS PARA TTF
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
+
+public class Principal extends Game {
+
+    public SpriteBatch batch;
+
+    public BitmapFont font;           // tamaño chico
+    public BitmapFont fontShadow;     // sombra chica
+    public BitmapFont bigFont;        // tamaño grande
+    public BitmapFont bigFontShadow;  // sombra grande
+    
+    // Gestor de sonidos global
+    public SoundManager soundManager;
 
     @Override
     public void create() {
         batch = new SpriteBatch();
-        image = new Texture("libgdx.png");
-    }
 
-    @Override
-    public void render() {
-        ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
-        batch.begin();
-        batch.draw(image, 140, 210);
-        batch.end();
+        // Crear el gestor de sonidos
+        soundManager = new SoundManager();
+
+        // Crear fuentes desde TTF una sola vez
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/DePixel.ttf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter p = new FreeTypeFontGenerator.FreeTypeFontParameter();
+
+        p.characters =
+                "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" +
+                "áéíóúñÁÉÍÓÚÑ" +
+                "0123456789" +
+                ".,:;!?¿¡()\"'-+*/=_<> ";
+
+        // Fuente normal
+        p.size = 20;
+        p.color = Color.WHITE;
+        font = generator.generateFont(p);
+
+        p.color = Color.BLACK;
+        fontShadow = generator.generateFont(p);
+
+        // Fuente grande
+        p.size = 40;
+        p.color = Color.WHITE;
+        bigFont = generator.generateFont(p);
+
+        p.color = Color.BLACK;
+        bigFontShadow = generator.generateFont(p);
+
+        generator.dispose();
+
+        setScreen(new MenuScreen(this));
     }
 
     @Override
     public void dispose() {
         batch.dispose();
-        image.dispose();
+        font.dispose();
+        fontShadow.dispose();
+        bigFont.dispose();
+        bigFontShadow.dispose();
+        
+        // Liberar recursos de audio
+        if (soundManager != null) {
+            soundManager.dispose();
+        }
+        
+        super.dispose();
     }
 }

@@ -6,10 +6,17 @@ import com.MBM.KOMaster.Principal;
 
 /** Launches the desktop (LWJGL3) application. */
 public class Lwjgl3Launcher {
-    public static void main(String[] args) {
-        if (StartupHelper.startNewJvmIfRequired()) return; // This handles macOS support and helps on Windows.
-        createApplication();
-    }
+	
+	static {
+		System.setProperty("org.lwjgl.opengl.Display.allowSoftwareOpenGL", "true");
+		System.setProperty("sun.java2d.d3d", "false");
+		System.setProperty("org.lwjgl.opengl.Display.enableHighDPI", "false");
+	}
+	
+	public static void main(String[] args) {
+	    if (StartupHelper.startNewJvmIfRequired()) return;
+	    createApplication();
+	}
 
     private static Lwjgl3Application createApplication() {
         return new Lwjgl3Application(new Principal(), getDefaultConfiguration());
